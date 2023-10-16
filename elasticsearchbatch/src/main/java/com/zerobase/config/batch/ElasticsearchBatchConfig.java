@@ -20,7 +20,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.persistence.EntityManagerFactory;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Configuration
@@ -82,11 +81,6 @@ public class ElasticsearchBatchConfig {
 
     @Bean
     public ItemWriter<RecipeDocument> recipeDocumentItemWriter() {
-        return new ItemWriter<RecipeDocument>() {
-            @Override
-            public void write(List<? extends RecipeDocument> items) throws Exception {
-                recipeElasticRepository.saveAll(items);
-            }
-        };
+        return recipeElasticRepository::saveAll;
     }
 }
