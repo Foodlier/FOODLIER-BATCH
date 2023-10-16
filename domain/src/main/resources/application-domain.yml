@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${mysql}:3306/foodlier?useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${mysqlUN}
+    password: ${mysqlPWD}
+
+  jpa:
+    show-sql: true
+
+    hibernate:
+      ddl-auto: update
+
+  batch:
+    jdbc:
+      initialize-schema: always
+
+elasticsearch:
+  connection: ${es}:9200
+  username: ${esUN}
+  password: ${esPWD}
