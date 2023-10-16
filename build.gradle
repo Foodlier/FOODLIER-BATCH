@@ -54,6 +54,12 @@ project(":mysqlbatch"){
 	}
 }
 
+project(":dmroombatch"){
+	dependencies {
+		implementation(project(":domain"))
+	}
+}
+
 project(":domain"){
 	jar{
 		enabled = true
