@@ -1,5 +1,5 @@
 rootProject.name = 'FOODLIER-BATCH'
 include 'domain'
 include 'elasticsearchbatch'
-include 'mysqlbatch'
+include 'requestbatch'
 

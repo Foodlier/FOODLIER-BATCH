@@ -48,7 +48,7 @@ project(":elasticsearchbatch"){
 	}
 }
 
-project(":mysqlbatch"){
+project(":requestbatch"){
 	dependencies {
 		implementation(project(":domain"))
 	}
