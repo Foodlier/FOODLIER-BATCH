@@ -1,0 +1,68 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.15' apply false
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE' apply false
+}
+
+group = 'com.zerobase'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '11'
+}
+
+repositories {
+	mavenCentral()
+}
+
+subprojects {
+	apply {
+		plugin('java')
+		plugin('org.springframework.boot')
+		plugin('io.spring.dependency-management')
+	}
+
+	sourceCompatibility = '11'
+	targetCompatibility = '11'
+
+	repositories {
+		mavenCentral()
+	}
+
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
+	dependencies {
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+	}
+
+}
+
+project(":elasticsearchbatch"){
+	dependencies {
+		implementation(project(":domain"))
+	}
+}
+
+project(":mysqlbatch"){
+	dependencies {
+		implementation(project(":domain"))
+	}
+}
+
+project(":domain"){
+	jar{
+		enabled = true
+	}
+	bootJar{
+		enabled = false
+	}
+}
+
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
