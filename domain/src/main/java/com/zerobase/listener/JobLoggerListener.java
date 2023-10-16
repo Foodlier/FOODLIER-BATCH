@@ -14,9 +14,9 @@ public class JobLoggerListener extends JobExecutionListenerSupport {
         log.info("JOB 수행 완료 {}", jobExecution);
 
         if (jobExecution.getStatus().equals(BatchStatus.COMPLETED)) {
-            log.info("{} : 성공", jobExecution.getJobConfigurationName());
+            log.info("{} : 성공", jobExecution.getJobInstance().getJobName());
         } else {
-            log.info("{} : 실패", jobExecution.getJobConfigurationName());
+            log.info("{} : 실패", jobExecution.getJobInstance().getJobName());
         }
     }
 }
