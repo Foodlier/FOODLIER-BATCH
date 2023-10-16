@@ -1,7 +1,7 @@
 package com.zerobase.repository;
 
-import com.zerobase.model.recipe.model.Recipe;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.zerobase.model.recipe.document.RecipeDocument;
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-public interface RecipeElasticRepository extends JpaRepository<Recipe, Long> {
+public interface RecipeElasticRepository extends ElasticsearchRepository<RecipeDocument, Long> {
 }
