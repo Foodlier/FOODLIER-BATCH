@@ -54,6 +54,12 @@ project(":requestbatch"){
 	}
 }
 
+project(":dmroombatch"){
+	dependencies {
+		implementation(project(":domain"))
+	}
+}
+
 project(":domain"){
 	jar{
 		enabled = true
