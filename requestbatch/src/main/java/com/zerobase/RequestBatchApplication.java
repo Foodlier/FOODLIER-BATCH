@@ -4,8 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MySQLBatchApplication {
+public class RequestBatchApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MySQLBatchApplication.class, args);
+        SpringApplication.run(RequestBatchApplication.class, args);
+        System.exit(0);
     }
 }
