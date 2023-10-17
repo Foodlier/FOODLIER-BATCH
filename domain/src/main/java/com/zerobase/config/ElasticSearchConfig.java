@@ -1,4 +1,4 @@
-package com.zerobase.config.elasticsearch;
+package com.zerobase.config;
 
 
 import com.zerobase.repository.RecipeElasticRepository;
