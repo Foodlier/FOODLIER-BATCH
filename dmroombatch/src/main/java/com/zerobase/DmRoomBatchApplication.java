@@ -7,5 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DmRoomBatchApplication {
     public static void main(String[] args) {
         SpringApplication.run(DmRoomBatchApplication.class, args);
+        System.exit(0);
     }
 }
